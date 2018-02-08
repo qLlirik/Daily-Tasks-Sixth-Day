@@ -1,0 +1,105 @@
+﻿<Window x:Class="SixthDay.Windows.AddNewDomcileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SixthDay.Windows"
+        mc:Ignorable="d"
+        Title="Бюро технической инвентаризации" Background="LightGray" FontSize="16" MinHeight="680" MinWidth="780" Height="800" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <TextBlock Text="Добавление нового домовладения" FontSize="20" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+        <Button Click="click_Back" Content="Назад" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="Номер домовладения: "/>
+                <TextBox x:Name="tbxID" Width="200" MaxLength="5"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="          Номер квартала: "/>
+                <TextBox x:Name="tbxBlock" Width="200" MaxLength="20"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="                         Адресс: "/>
+                <TextBox x:Name="tbxAddress" Width="200" MaxLength="60"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="              Район города: "/>
+                <TextBox x:Name="tbxDistrict" Width="200" MaxLength="15"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="           Дата инвент-ии: " VerticalAlignment="Center"/>
+                <DatePicker x:Name="dpInventory" Width="200"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="             S зем. участка: "/>
+                <TextBox x:Name="tbxLand" Width="200" MaxLength="60"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="       Фактич. S участка: "/>
+                <TextBox x:Name="tbxActual" Width="200" MaxLength="60"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="                S застройки: "/>
+                <TextBox x:Name="tbxBuildUp" Width="200" MaxLength="60"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="                       S двора: "/>
+                <TextBox x:Name="tbxYard" Width="200" MaxLength="60"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="                      S озел-я: "/>
+                <TextBox x:Name="tbxGreen" Width="200" MaxLength="60"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="                   S огорода: "/>
+                <TextBox x:Name="tbxGarden" Width="200" MaxLength="60"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="                   S неудобя: "/>
+                <TextBox x:Name="tbxBand" Width="200" MaxLength="60"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="                                 Фотография: "/>
+                <TextBox x:Name="tbxImage" Width="200" MaxLength="60"/>
+                <Button Click="clickSelectImage" Content="Выбрать" Margin="10 0 0 0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="Освещение: "/>
+                <RadioButton x:Name="rbLightTrue" GroupName="Light" Content="Есть" IsChecked="True"/>
+                <RadioButton x:Name="rbLightFalse" GroupName="Light" Content="Нет" Margin="10 0 0 0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="Водопровод: "/>
+                <RadioButton x:Name="rbWaterTrue"  GroupName="Water" Content="Есть" IsChecked="True"/>
+                <RadioButton x:Name="rbWaterFalse" GroupName="Water" Content="Нет" Margin="10 0 0 0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="Отопление: "/>
+                <RadioButton x:Name="rbHeatingTrue"  GroupName="Heating" Content="Есть" IsChecked="True"/>
+                <RadioButton x:Name="rbHeatingFalse" GroupName="Heating" Content="Нет" Margin="10 0 0 0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <TextBlock Text="Примечание: " VerticalAlignment="Center"/>
+                <TextBox x:Name="tbxComment" Width="300" MaxLength="60" Height="80" TextWrapping="Wrap"/>
+            </StackPanel>
+            
+            <Button Click="click_Add" Content="Добавить" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,64 @@
+﻿<Window x:Class="SixthDay.Windows.AddNewBuildingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SixthDay.Windows"
+        mc:Ignorable="d"
+        Title="Бюро технической инвентаризации" Background="LightGray" FontSize="16" MinHeight="580" MinWidth="780" Height="600" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <TextBlock Text="Добавление зданий в домовладение" FontSize="20" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+        <Button Click="click_Back" Content="Назад" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="        Назначение: "/>
+                <TextBox x:Name="tbxContents" Width="200" MaxLength="20"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="                      Тип: " VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbxType" Width="200"/>
+            </StackPanel>
+
+            <CheckBox x:Name="chbx" Content="Самострой" HorizontalAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text=" Год постройки: : "/>
+                <TextBox x:Name="tbxYear" Width="100" MaxLength="4"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Общая площадь: "/>
+                <TextBox x:Name="tbxSquareAll" Width="100" MaxLength="4"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text=" Жилая площадь: "/>
+                <TextBox x:Name="tbxInhabited" Width="100" MaxLength="4"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="           Износ (%): "/>
+                <TextBox x:Name="tbxWear" Width="50" MaxLength="2"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="   Материал стен: "/>
+                <TextBox x:Name="tbxWall" Width="200" MaxLength="15"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="          Стоимость: "/>
+                <TextBox x:Name="tbxCost" Width="200" MaxLength="15"/>
+                <TextBlock Text=" * " ToolTip="При делении на копейки, разделителем используйте ','(запятую)." VerticalAlignment="Center" FontWeight="Bold" Foreground="Red"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="          Этажность: "/>
+                <TextBox x:Name="tbxStoryes" Width="200" MaxLength="20"/>
+            </StackPanel>
+            
+            <Button Click="click_Add" Content="Добавить" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

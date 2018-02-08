@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Buildings">
+          <Key>
+            <PropertyRef Name="Letter" />
+          </Key>
+          <Property Name="Letter" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DomicileID" Type="int" Nullable="false" />
+          <Property Name="Contents" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="MySelf" Type="bit" Nullable="false" />
+          <Property Name="Year" Type="smallint" Nullable="false" />
+          <Property Name="SquareAll" Type="float" Nullable="false" />
+          <Property Name="Inhabited" Type="float" Nullable="false" />
+          <Property Name="Wear" Type="tinyint" Nullable="false" />
+          <Property Name="Wall" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Cost" Type="decimal" Precision="15" Scale="0" Nullable="false" />
+          <Property Name="Storeys" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Domicile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Block" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="District" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Inventory" Type="datetime" Nullable="false" />
+          <Property Name="Land" Type="float" Nullable="false" />
+          <Property Name="Actual" Type="float" Nullable="false" />
+          <Property Name="BuildUp" Type="float" Nullable="false" />
+          <Property Name="Yard" Type="float" Nullable="false" />
+          <Property Name="Green" Type="float" Nullable="false" />
+          <Property Name="Garden" Type="float" Nullable="false" />
+          <Property Name="Bad" Type="float" Nullable="false" />
+          <Property Name="Picture" Type="image" Nullable="false" />
+          <Property Name="Light" Type="bit" Nullable="false" />
+          <Property Name="WaterPipe" Type="bit" Nullable="false" />
+          <Property Name="Heating" Type="bit" Nullable="false" />
+          <Property Name="Comment" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumberSign" Type="int" Nullable="false" />
+          <Property Name="BuildingID" Type="tinyint" Nullable="false" />
+          <Property Name="Prescribe" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SquareRoom" Type="float" Nullable="false" />
+          <Property Name="HighRoom" Type="float" Nullable="false" />
+          <Property Name="Storey" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Buildings_Domicile">
+          <End Role="Domicile" Type="Self.Domicile" Multiplicity="1" />
+          <End Role="Buildings" Type="Self.Buildings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domicile">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buildings">
+              <PropertyRef Name="DomicileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buildings_Type">
+          <End Role="Type" Type="Self.Type" Multiplicity="1" />
+          <End Role="Buildings" Type="Self.Buildings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buildings">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rooms_Buildings1">
+          <End Role="Buildings" Type="Self.Buildings" Multiplicity="1" />
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Buildings">
+              <PropertyRef Name="Letter" />
+            </Principal>
+            <Dependent Role="Rooms">
+              <PropertyRef Name="BuildingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ModelContainer">
+          <EntitySet Name="Buildings" EntityType="Self.Buildings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Domicile" EntityType="Self.Domicile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Buildings_Domicile" Association="Self.FK_Buildings_Domicile">
+            <End Role="Domicile" EntitySet="Domicile" />
+            <End Role="Buildings" EntitySet="Buildings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buildings_Type" Association="Self.FK_Buildings_Type">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="Buildings" EntitySet="Buildings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rooms_Buildings1" Association="Self.FK_Rooms_Buildings1">
+            <End Role="Buildings" EntitySet="Buildings" />
+            <End Role="Rooms" EntitySet="Rooms" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Buildings" EntityType="Model.Buildings" />
+          <EntitySet Name="Domicile" EntityType="Model.Domicile" />
+          <EntitySet Name="Rooms" EntityType="Model.Rooms" />
+          <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
+          <EntitySet Name="Type" EntityType="Model.Type" />
+          <AssociationSet Name="FK_Buildings_Domicile" Association="Model.FK_Buildings_Domicile">
+            <End Role="Domicile" EntitySet="Domicile" />
+            <End Role="Buildings" EntitySet="Buildings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buildings_Type" Association="Model.FK_Buildings_Type">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="Buildings" EntitySet="Buildings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rooms_Buildings1" Association="Model.FK_Rooms_Buildings1">
+            <End Role="Buildings" EntitySet="Buildings" />
+            <End Role="Rooms" EntitySet="Rooms" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Buildings">
+          <Key>
+            <PropertyRef Name="Letter" />
+          </Key>
+          <Property Name="Letter" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DomicileID" Type="Int32" Nullable="false" />
+          <Property Name="Contents" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="MySelf" Type="Boolean" Nullable="false" />
+          <Property Name="Year" Type="Int16" Nullable="false" />
+          <Property Name="SquareAll" Type="Double" Nullable="false" />
+          <Property Name="Inhabited" Type="Double" Nullable="false" />
+          <Property Name="Wear" Type="Byte" Nullable="false" />
+          <Property Name="Wall" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="15" Scale="0" />
+          <Property Name="Storeys" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Domicile" Relationship="Model.FK_Buildings_Domicile" FromRole="Buildings" ToRole="Domicile" />
+          <NavigationProperty Name="Type" Relationship="Model.FK_Buildings_Type" FromRole="Buildings" ToRole="Type" />
+          <NavigationProperty Name="Rooms" Relationship="Model.FK_Rooms_Buildings1" FromRole="Buildings" ToRole="Rooms" />
+        </EntityType>
+        <EntityType Name="Domicile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Block" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="District" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Inventory" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Land" Type="Double" Nullable="false" />
+          <Property Name="Actual" Type="Double" Nullable="false" />
+          <Property Name="BuildUp" Type="Double" Nullable="false" />
+          <Property Name="Yard" Type="Double" Nullable="false" />
+          <Property Name="Green" Type="Double" Nullable="false" />
+          <Property Name="Garden" Type="Double" Nullable="false" />
+          <Property Name="Bad" Type="Double" Nullable="false" />
+          <Property Name="Picture" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Light" Type="Boolean" Nullable="false" />
+          <Property Name="WaterPipe" Type="Boolean" Nullable="false" />
+          <Property Name="Heating" Type="Boolean" Nullable="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Buildings" Relationship="Model.FK_Buildings_Domicile" FromRole="Domicile" ToRole="Buildings" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumberSign" Type="Int32" Nullable="false" />
+          <Property Name="BuildingID" Type="Byte" Nullable="false" />
+          <Property Name="Prescribe" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SquareRoom" Type="Double" Nullable="false" />
+          <Property Name="HighRoom" Type="Double" Nullable="false" />
+          <Property Name="Storey" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Buildings" Relationship="Model.FK_Rooms_Buildings1" FromRole="Rooms" ToRole="Buildings" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Buildings" Relationship="Model.FK_Buildings_Type" FromRole="Type" ToRole="Buildings" />
+        </EntityType>
+        <Association Name="FK_Buildings_Domicile">
+          <End Type="Model.Domicile" Role="Domicile" Multiplicity="1" />
+          <End Type="Model.Buildings" Role="Buildings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Domicile">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buildings">
+              <PropertyRef Name="DomicileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buildings_Type">
+          <End Type="Model.Type" Role="Type" Multiplicity="1" />
+          <End Type="Model.Buildings" Role="Buildings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buildings">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rooms_Buildings1">
+          <End Type="Model.Buildings" Role="Buildings" Multiplicity="1" />
+          <End Type="Model.Rooms" Role="Rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Buildings">
+              <PropertyRef Name="Letter" />
+            </Principal>
+            <Dependent Role="Rooms">
+              <PropertyRef Name="BuildingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="Entity">
+          <EntitySetMapping Name="Buildings">
+            <EntityTypeMapping TypeName="Model.Buildings">
+              <MappingFragment StoreEntitySet="Buildings">
+                <ScalarProperty Name="Storeys" ColumnName="Storeys" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Wall" ColumnName="Wall" />
+                <ScalarProperty Name="Wear" ColumnName="Wear" />
+                <ScalarProperty Name="Inhabited" ColumnName="Inhabited" />
+                <ScalarProperty Name="SquareAll" ColumnName="SquareAll" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="MySelf" ColumnName="MySelf" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="DomicileID" ColumnName="DomicileID" />
+                <ScalarProperty Name="Letter" ColumnName="Letter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Domicile">
+            <EntityTypeMapping TypeName="Model.Domicile">
+              <MappingFragment StoreEntitySet="Domicile">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Heating" ColumnName="Heating" />
+                <ScalarProperty Name="WaterPipe" ColumnName="WaterPipe" />
+                <ScalarProperty Name="Light" ColumnName="Light" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Bad" ColumnName="Bad" />
+                <ScalarProperty Name="Garden" ColumnName="Garden" />
+                <ScalarProperty Name="Green" ColumnName="Green" />
+                <ScalarProperty Name="Yard" ColumnName="Yard" />
+                <ScalarProperty Name="BuildUp" ColumnName="BuildUp" />
+                <ScalarProperty Name="Actual" ColumnName="Actual" />
+                <ScalarProperty Name="Land" ColumnName="Land" />
+                <ScalarProperty Name="Inventory" ColumnName="Inventory" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Block" ColumnName="Block" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="Model.Rooms">
+              <MappingFragment StoreEntitySet="Rooms">
+                <ScalarProperty Name="Storey" ColumnName="Storey" />
+                <ScalarProperty Name="HighRoom" ColumnName="HighRoom" />
+                <ScalarProperty Name="SquareRoom" ColumnName="SquareRoom" />
+                <ScalarProperty Name="Prescribe" ColumnName="Prescribe" />
+                <ScalarProperty Name="BuildingID" ColumnName="BuildingID" />
+                <ScalarProperty Name="NumberSign" ColumnName="NumberSign" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type">
+            <EntityTypeMapping TypeName="Model.Type">
+              <MappingFragment StoreEntitySet="Type">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

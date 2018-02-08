@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Buildings">
+    <Key>
+      <PropertyRef Name="Letter" />
+    </Key>
+    <Property Name="Letter" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DomicileID" Type="int" Nullable="false" />
+    <Property Name="Contents" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="MySelf" Type="bit" Nullable="false" />
+    <Property Name="Year" Type="smallint" Nullable="false" />
+    <Property Name="SquareAll" Type="float" Nullable="false" />
+    <Property Name="Inhabited" Type="float" Nullable="false" />
+    <Property Name="Wear" Type="tinyint" Nullable="false" />
+    <Property Name="Wall" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="15" Scale="0" Nullable="false" />
+    <Property Name="Storeys" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Domicile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Block" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="District" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Inventory" Type="datetime" Nullable="false" />
+    <Property Name="Land" Type="float" Nullable="false" />
+    <Property Name="Actual" Type="float" Nullable="false" />
+    <Property Name="BuildUp" Type="float" Nullable="false" />
+    <Property Name="Yard" Type="float" Nullable="false" />
+    <Property Name="Green" Type="float" Nullable="false" />
+    <Property Name="Garden" Type="float" Nullable="false" />
+    <Property Name="Bad" Type="float" Nullable="false" />
+    <Property Name="Picture" Type="image" Nullable="false" />
+    <Property Name="Light" Type="bit" Nullable="false" />
+    <Property Name="WaterPipe" Type="bit" Nullable="false" />
+    <Property Name="Heating" Type="bit" Nullable="false" />
+    <Property Name="Comment" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rooms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumberSign" Type="int" Nullable="false" />
+    <Property Name="BuildingID" Type="tinyint" Nullable="false" />
+    <Property Name="Prescribe" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SquareRoom" Type="float" Nullable="false" />
+    <Property Name="HighRoom" Type="float" Nullable="false" />
+    <Property Name="Storey" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Buildings_Domicile">
+    <End Role="Domicile" Type="Self.Domicile" Multiplicity="1" />
+    <End Role="Buildings" Type="Self.Buildings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domicile">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Buildings">
+        <PropertyRef Name="DomicileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Buildings_Type">
+    <End Role="Type" Type="Self.Type" Multiplicity="1" />
+    <End Role="Buildings" Type="Self.Buildings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Buildings">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rooms_Buildings1">
+    <End Role="Buildings" Type="Self.Buildings" Multiplicity="1" />
+    <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Buildings">
+        <PropertyRef Name="Letter" />
+      </Principal>
+      <Dependent Role="Rooms">
+        <PropertyRef Name="BuildingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelContainer">
+    <EntitySet Name="Buildings" EntityType="Self.Buildings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Domicile" EntityType="Self.Domicile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Buildings_Domicile" Association="Self.FK_Buildings_Domicile">
+      <End Role="Domicile" EntitySet="Domicile" />
+      <End Role="Buildings" EntitySet="Buildings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Buildings_Type" Association="Self.FK_Buildings_Type">
+      <End Role="Type" EntitySet="Type" />
+      <End Role="Buildings" EntitySet="Buildings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rooms_Buildings1" Association="Self.FK_Rooms_Buildings1">
+      <End Role="Buildings" EntitySet="Buildings" />
+      <End Role="Rooms" EntitySet="Rooms" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

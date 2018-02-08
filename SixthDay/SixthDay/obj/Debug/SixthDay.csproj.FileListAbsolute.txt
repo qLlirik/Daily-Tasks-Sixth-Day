@@ -1,0 +1,60 @@
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\bin\Debug\SixthDay.exe.config
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\bin\Debug\SixthDay.exe
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\bin\Debug\SixthDay.pdb
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\MainWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\App.g.cs
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay_MarkupCompile.cache
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay_MarkupCompile.lref
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\App.baml
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\MainWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay.g.resources
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay.Properties.Resources.resources
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay.exe
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay.pdb
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\AddNewDomcileWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\AddNewDomcileWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\bin\Debug\EntityFramework.dll
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\bin\Debug\EntityFramework.xml
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\SixthDay_Content.g.cs
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\AddNewBuildingWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\BuildingsWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\AddNewBuildingWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\BuildingsWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\RoomsWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\RoomsWindow.baml
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\AddNewRoomWindow.g.cs
+c:\users\user\documents\visual studio 2015\Projects\SixthDay\SixthDay\obj\Debug\Windows\AddNewRoomWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\bin\Debug\SixthDay.exe.config
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay.exe
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay.pdb
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\bin\Debug\SixthDay.exe
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\bin\Debug\SixthDay.pdb
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\MainWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\AddNewBuildingWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\AddNewDomcileWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\AddNewRoomWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\BuildingsWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\RoomsWindow.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\App.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay_Content.g.cs
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay_MarkupCompile.cache
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay_MarkupCompile.lref
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\App.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\MainWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\AddNewBuildingWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\AddNewDomcileWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\AddNewRoomWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\BuildingsWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\Windows\RoomsWindow.baml
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay.g.resources
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\Daily-Tasks-Sixth-Day\SixthDay\SixthDay\obj\Debug\SixthDay.csproj.GenerateResource.Cache
